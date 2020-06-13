@@ -31,7 +31,7 @@ class Solution {
             }
         }
         for (i in board.indices) {
-            val liveSet = live[i]?: emptySet()
+            val liveSet = live[i]?: emptySet<Int>()
             for (j in board[i].indices) {
                 board[i][j] = if (liveSet.contains(j)) 1 else 0
             }
