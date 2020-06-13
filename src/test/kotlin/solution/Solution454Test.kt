@@ -2,6 +2,7 @@ package solution
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
+import solution.medium.n454.Solution
 
 class Solution454Test {
 
