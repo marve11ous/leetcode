@@ -1,4 +1,4 @@
-package solution.n125;
+package solution.java.medium.n125;
 
 public class Solution {
 

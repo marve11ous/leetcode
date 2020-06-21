@@ -1,4 +1,4 @@
-package solution.concurrency.n1114;
+package solution.java.concurrency.n1114;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;

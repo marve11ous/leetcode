@@ -1,4 +1,4 @@
-package solution.concurrency.n1116;
+package solution.java.concurrency.n1116;
 
 import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;

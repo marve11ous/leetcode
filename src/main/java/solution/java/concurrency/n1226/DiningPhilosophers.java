@@ -1,4 +1,4 @@
-package solution.concurrency.n1226;
+package solution.java.concurrency.n1226;
 
 class DiningPhilosophers {
 

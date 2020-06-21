@@ -1,4 +1,4 @@
-package solution.concurrency.n1195;
+package solution.java.concurrency.n1195;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
