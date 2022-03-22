@@ -1,9 +1,12 @@
-package solution
+package solution.easy.n1200
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
-class SolutionTest {
+/**
+ * @author AShkabara
+ */
+internal class SolutionTest {
 
     private val solution = Solution()
     private val solve = { nums: IntArray -> solution.minimumAbsDifference(nums) }

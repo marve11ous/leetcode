@@ -1,10 +1,9 @@
-package solution
+package solution.medium.n454
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
-import solution.medium.n454.Solution
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
-class Solution454Test {
+internal class SolutionTest {
 
     private val solution = Solution()
     private val solve = { A: IntArray, B: IntArray, C: IntArray, D: IntArray -> solution.fourSumCount(A, B, C, D) }

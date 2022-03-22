@@ -1,10 +1,12 @@
-package solution
+package solution.medium.n355
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
-import solution.medium.n355.Twitter
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
-class TwitterTest {
+/**
+ * @author AShkabara
+ */
+internal class TwitterTest {
 
     @Test
     fun test() {

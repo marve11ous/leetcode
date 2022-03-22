@@ -1,10 +1,9 @@
-package solution
+package solution.medium.n207
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
-import solution.medium.n207.Solution
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
-class Solution207Test {
+internal class SolutionTest {
 
     private val solution = Solution()
     private val solve =
@@ -37,5 +36,4 @@ class Solution207Test {
         test(true, solve(2, arrayOf(intArrayOf(1, 0))))
         test(false, solve(2, arrayOf(intArrayOf(1, 0), intArrayOf(0, 1))))
     }
-
 }
