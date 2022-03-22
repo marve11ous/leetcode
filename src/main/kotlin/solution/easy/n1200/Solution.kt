@@ -10,9 +10,9 @@ class Solution {
             if (diff < minDiff) {
                 minDiff = diff
                 result.clear()
-            } 
+            }
             if (diff == minDiff) {
-                result.add(listOf(arr[i], arr[i + 1]))    
+                result.add(listOf(arr[i], arr[i + 1]))
             }
         }
         return result

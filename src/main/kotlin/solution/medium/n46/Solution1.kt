@@ -1,7 +1,6 @@
 package solution.medium.n46
 
 import java.util.*
-import kotlin.collections.ArrayList
 
 /**
  * 46. Permutations
@@ -25,7 +24,7 @@ class Solution1 {
         for (num in nums) {
             val numSet = nums.toHashSet()
             numSet.remove(num)
-            permuteInternal(numSet).forEach{
+            permuteInternal(numSet).forEach {
                 it.addFirst(num)
                 result.add(it)
             }

@@ -7,6 +7,7 @@ class Solution {
         val regex = "([+-]?)(\\d+)".toRegex()
         val splitRegex = "[^-+\\d]".toRegex()
     }
+
     fun myAtoi(str: String): Int {
         val split = str.trim().split(splitRegex)
         if (split.isEmpty()) {

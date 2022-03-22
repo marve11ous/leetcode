@@ -25,7 +25,7 @@ class Solution {
                     }
                 }
             }
-            result = max(result, dp[n].max() ?: 0)
+            result = max(result, dp[n].maxOrNull() ?: 0)
         }
         return result
     }

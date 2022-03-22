@@ -5,7 +5,7 @@ abstract class VersionControl {
         return version >= bad
     }
 
-    abstract fun firstBadVersion(n: Int) : Int
+    abstract fun firstBadVersion(n: Int): Int
 
     companion object {
         var bad = 0

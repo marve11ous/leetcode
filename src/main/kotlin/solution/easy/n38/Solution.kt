@@ -4,7 +4,7 @@ import java.math.BigInteger
 
 class Solution {
     fun countAndSay(n: Int): String {
-        var result:BigInteger = BigInteger.ONE
+        var result: BigInteger = BigInteger.ONE
         for (i in 1 until n) {
             result = count(result).toBigInteger()
         }

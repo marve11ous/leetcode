@@ -13,7 +13,7 @@ import solution.util.TreeNode
  * }
  */
 class Solution {
-        fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {
+    fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {
         if (p == null && q == null) {
             return true
         }

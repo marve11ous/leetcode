@@ -10,7 +10,7 @@ package solution.medium.n208
  * All inputs are guaranteed to be non-empty strings.
  */
 
-class Trie() {
+class Trie {
     private val root = Node()
 
     fun insert(word: String) {

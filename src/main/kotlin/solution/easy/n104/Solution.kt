@@ -17,7 +17,7 @@ class Solution {
     fun maxDepth(root: TreeNode?): Int {
         return getDepth(root)
     }
-    
+
     private fun getDepth(root: TreeNode?): Int {
         if (root == null) {
             return 0

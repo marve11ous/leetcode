@@ -12,7 +12,7 @@ import solution.util.ListNode
  * }
  */
 class Solution {
-        fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
+    fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
         var toRemove = head
         var current = head
         var k = 0

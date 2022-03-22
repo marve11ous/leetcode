@@ -1,4 +1,5 @@
 package solution.medium.n322
+
 class Solution {
     fun coinChange(coins: IntArray, amount: Int): Int {
         if (amount < 1) {
