@@ -3,9 +3,6 @@ package solution.easy.n1200
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/**
- * @author AShkabara
- */
 internal class SolutionTest {
 
     private val solution = Solution()

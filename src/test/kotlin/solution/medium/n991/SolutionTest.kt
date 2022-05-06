@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
 
-/**
- * @author AShkabara
- */
 internal class SolutionTest {
     private val solution = Solution()
 
