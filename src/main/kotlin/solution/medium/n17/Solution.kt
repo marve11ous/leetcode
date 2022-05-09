@@ -1,6 +1,11 @@
 package solution.medium.n17
 
-class Solution {
+import solution.medium.n17.Solution.Companion.phone
+
+/**
+ * [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
+ */
+interface Solution {
 
     companion object {
         val phone = mapOf(
@@ -15,7 +20,11 @@ class Solution {
         )
     }
 
-    fun letterCombinations(digits: String): List<String> {
+    fun letterCombinations(digits: String): List<String>
+}
+
+class Solution1 : Solution {
+    override fun letterCombinations(digits: String): List<String> {
         var result: List<String> = emptyList()
         for (digit in digits) {
             result = process(digit, result)
@@ -41,4 +50,18 @@ class Solution {
         return next
     }
 
+}
+
+class Solution2 : Solution {
+
+    override fun letterCombinations(digits: String): List<String> {
+        if (digits.isEmpty()) return listOf()
+        return letterCombinations(0, digits, "")
+    }
+
+    private fun letterCombinations(i: Int, digits: String, current: String): List<String> {
+        val strings = phone[digits[i]]?.map { current + it } ?: listOf()
+        if (i == digits.length - 1) return strings
+        return strings.flatMap { letterCombinations(i + 1, digits, it) }
+    }
 }
