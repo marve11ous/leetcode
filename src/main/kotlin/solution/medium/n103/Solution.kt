@@ -1,5 +1,6 @@
 package solution.medium.n103
 
+import solution.util.TreeNode
 import java.util.*
 
 /**
@@ -23,9 +24,4 @@ class Solution {
         }
         return result
     }
-}
-
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
 }

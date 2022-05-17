@@ -1,5 +1,7 @@
 package solution.medium.n173
 
+import solution.util.TreeNode
+
 /**
  * [173. Binary Search Tree Iterator](https://leetcode.com/problems/binary-search-tree-iterator/)
  */
@@ -33,9 +35,4 @@ class BSTIterator(private val root: TreeNode?) {
     }
 
     enum class Order { L, N, R }
-}
-
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
 }

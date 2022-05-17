@@ -1,5 +1,7 @@
 package solution.medium.n1721
 
+import solution.util.ListNode
+
 /**
  * [1721. Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)
  */
@@ -19,22 +21,18 @@ class Solution {
         }
         return nullNode.next
     }
-}
 
-private fun swapLinks(node1: ListNode?, node2: ListNode?) {
-    val temp = node1?.next
-    node1?.next = node2?.next
-    node2?.next = temp
-}
-
-private fun ListNode?.next(skip: Int): ListNode? {
-    var listNode: ListNode? = this
-    for (i in 0 until skip) {
-        listNode = listNode?.next
+    private fun swapLinks(node1: ListNode?, node2: ListNode?) {
+        val temp = node1?.next
+        node1?.next = node2?.next
+        node2?.next = temp
     }
-    return listNode
-}
 
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
+    private fun ListNode?.next(skip: Int): ListNode? {
+        var listNode: ListNode? = this
+        for (i in 0 until skip) {
+            listNode = listNode?.next
+        }
+        return listNode
+    }
 }

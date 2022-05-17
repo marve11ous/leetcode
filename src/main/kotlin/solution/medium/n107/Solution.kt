@@ -1,5 +1,6 @@
 package solution.medium.n107
 
+import solution.util.TreeNode
 import java.util.LinkedList
 
 /**
@@ -21,9 +22,4 @@ class Solution {
         }
         return result
     }
-}
-
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
 }

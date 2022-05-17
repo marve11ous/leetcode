@@ -1,5 +1,6 @@
 package solution.easy.n111
 
+import solution.util.TreeNode
 import kotlin.math.min
 
 /**
@@ -17,9 +18,4 @@ class Solution {
             root.left == null && root.right == null -> depth
             else -> min(minDepth(root.left, depth + 1), minDepth(root.right, depth + 1))
         }
-}
-
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
 }

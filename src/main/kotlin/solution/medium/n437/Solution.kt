@@ -1,5 +1,7 @@
 package solution.medium.n437
 
+import solution.util.TreeNode
+
 /**
  * [437. Path Sum III](https://leetcode.com/problems/path-sum-iii/)
  */
@@ -17,9 +19,4 @@ class Solution {
         result += sums.count { it == targetSum }
         return sums
     }
-}
-
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
 }
