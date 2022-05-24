@@ -3,6 +3,7 @@ package solution.medium.n173
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
+import solution.util.TreeNode
 
 internal class BSTIteratorTest {
 
