@@ -3,13 +3,7 @@ package leetcode.solution.n19
 import leetcode.util.ListNode
 
 /**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
+ * [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
  */
 class Solution {
     fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
@@ -17,20 +11,16 @@ class Solution {
         var current = head
         var k = 0
         while (current != null) {
-            if (k > n) {
-                toRemove = toRemove?.next
-            } else {
-                k++
-            }
+            if (k > n) toRemove = toRemove?.next else k++
             current = current.next
         }
-        if (toRemove?.next == null) {
-            return null
+        return when {
+            toRemove?.next == null -> null
+            k == n -> head?.next
+            else -> {
+                toRemove.next = toRemove.next?.next
+                head
+            }
         }
-        if (k == n) {
-            return head?.next
-        }
-        toRemove.next = toRemove.next?.next
-        return head
     }
 }
