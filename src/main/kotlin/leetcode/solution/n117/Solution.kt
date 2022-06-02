@@ -1,5 +1,6 @@
 package leetcode.solution.n117
 
+import leetcode.util.Node
 import java.util.*
 
 /**
@@ -25,9 +26,3 @@ class Solution {
 
 private fun LinkedList<Node>.pollAndOfferNext(): Node =
     poll().apply { left?.let { offer(it) }; right?.let { offer(it) } }
-
-class Node(var `val`: Int) {
-    var left: Node? = null
-    var right: Node? = null
-    var next: Node? = null
-}
