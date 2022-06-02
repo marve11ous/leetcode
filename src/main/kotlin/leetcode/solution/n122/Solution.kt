@@ -1,25 +1,24 @@
 package leetcode.solution.n122
 
+/**
+ * [122. Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+ */
 class Solution {
 
     fun maxProfit(prices: IntArray): Int {
-        var canBuy = true
-        var price = 0
-        var output = 0
-        for (i in 0 until prices.size - 1) {
-            if (prices[i] < prices[i + 1] && canBuy) {
-                price = prices[i]
-                canBuy = false
+        var buy = -1
+        var result = 0
+        var prev = Int.MAX_VALUE
+        for (i in prices.indices) {
+            if (prices[i] < prev && (prices[i] < buy || buy < 0)) {
+                buy = prices[i]
+            } else if (buy >= 0 && (i == prices.size - 1 || prices[i] > prices[i + 1])) {
+                result += prices[i] - buy
+                buy = -1
             }
-            if (prices[i] > prices[i + 1] && !canBuy) {
-                output += prices[i] - price
-                canBuy = true
-            }
+            prev = prices[i]
         }
-        if (!canBuy) {
-            output += prices[prices.size - 1] - price
-        }
-        return output
+        return result
     }
 
 }
