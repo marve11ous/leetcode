@@ -1,22 +1,16 @@
 package leetcode.solution.n367
 
-import kotlin.math.min
-
+/**
+ * [367. Valid Perfect Square](https://leetcode.com/problems/valid-perfect-square/)
+ */
 class Solution {
-    fun isPerfectSquare(x: Int): Boolean {
-        if (x == 1) return true
-        val xL = x.toLong()
-        var left = 0L
-        var right = min(x, 46341)
-        while (left + 1 < right) {
-            val mid = left + (right - left) / 2
-            val pow = mid * mid
-            when {
-                pow == xL -> return true
-                pow > xL -> right--
-                else -> left++
-            }
+    fun isPerfectSquare(num: Int): Boolean {
+        var l = 1
+        var r = num
+        while (l < r) {
+            val mid = l + (r - l) / 2
+            if (mid * mid.toLong() < num) l = mid + 1 else r = mid
         }
-        return false
+        return l * l == num
     }
 }
