@@ -5,21 +5,18 @@ package leetcode.solution.n63
  */
 class Solution {
 
-    fun uniquePathsWithObstacles(
-        obstacleGrid: Array<IntArray>,
-        dp: Array<IntArray> = Array(obstacleGrid.size) { IntArray(obstacleGrid[0].size) },
-        i: Int = 0,
-        j: Int = 0
-    ): Int {
-        when {
-            obstacleGrid[i][j] == 1 -> return 0
-            i == dp.size - 1 && j == dp[i].size - 1 -> return 1
-            dp[i][j] == 0 -> {
-                if (i + 1 < dp.size) dp[i][j] += uniquePathsWithObstacles(obstacleGrid, dp, i + 1, j)
-                if (j + 1 < dp[i].size) dp[i][j] += uniquePathsWithObstacles(obstacleGrid, dp, i, j + 1)
+    fun uniquePathsWithObstacles(obstacleGrid: Array<IntArray>): Int {
+        val dp = Array(obstacleGrid.size) { IntArray(obstacleGrid[0].size) }
+        if (obstacleGrid[0][0] == 1) return 0
+        dp[0][0] = 1
+        for (i in dp.indices) {
+            for (j in dp[0].indices) {
+                if (obstacleGrid[i][j] == 1) continue
+                if (i > 0) dp[i][j] += dp[i - 1][j]
+                if (j > 0) dp[i][j] += dp[i][j - 1]
             }
         }
-        return dp[i][j]
+        return dp.last().last()
     }
 
 }
