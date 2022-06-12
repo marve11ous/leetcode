@@ -1,35 +1,20 @@
 package leetcode.solution.n300
 
+/**
+ * [300. Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/)
+ */
 class Solution {
 
-    private lateinit var nums: IntArray
-    private lateinit var dp: IntArray
-
     fun lengthOfLIS(nums: IntArray): Int {
-        if (nums.size < 2) {
-            return nums.size
-        }
-        this.nums = nums
-        this.dp = IntArray(nums.size)
-        var result = 1
-        for (n in 1 until nums.size) {
-            result = max(result, dp(n))
-        }
-        return result
-    }
-
-    private fun dp(n: Int): Int {
-        if (n == 0) return 1
-        if (dp[n] != 0) return dp[n]
+        if (nums.isEmpty()) return 0
         var result = 0
-        for (i in 0 until n) {
-            if (nums[n] > nums[i]) {
-                result = max(result, dp(i))
+        val dp = IntArray(nums.size)
+        for (i in 1 until nums.size) {
+            for (j in 0 until i) {
+                if (nums[i] > nums[j]) dp[i] = dp[i].coerceAtLeast(dp[j] + 1)
             }
+            result = result.coerceAtLeast(dp[i])
         }
-        dp[n] = result + 1
-        return dp[n]
+        return result + 1
     }
-
-    private fun max(a: Int, b: Int) = if (a < b) b else a
 }
