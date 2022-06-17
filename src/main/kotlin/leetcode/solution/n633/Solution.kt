@@ -1,29 +1,23 @@
 package leetcode.solution.n633
 
+/**
+ * [633. Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/)
+ */
 class Solution {
     fun judgeSquareSum(c: Int): Boolean {
         var a = 0L
-        var tmp = 0L
-        while (tmp <= c) {
-            val b = c - tmp.toInt()
-            if (binarySearch(0, b.toLong(), b)) {
-                return true
+        while (a * a <= c) {
+            val target = c - a * a
+            var l = 0L
+            var r = target
+            while (l <= r) {
+                val mid = l + (r - l) / 2
+                if (mid * mid == target) return true
+                if (mid * mid < target) l = mid + 1 else r = mid - 1
             }
-            tmp = ++a * a
+            a++
         }
         return false
     }
 
-    private fun binarySearch(s: Long, e: Long, n: Int): Boolean {
-        if (s > e) {
-            return false
-        }
-        val mid = s + (e - s) / 2
-        val tmp = mid * mid
-        if (tmp == n.toLong()) {
-            return true
-        }
-        return if (tmp > n) binarySearch(s, mid - 1, n)
-        else binarySearch(mid + 1, e, n)
-    }
 }
