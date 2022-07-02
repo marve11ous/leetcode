@@ -1,12 +1,24 @@
 package leetcode.solution.n1046
 
 import java.util.*
+import kotlin.math.abs
 
 /**
  * [1046. Last Stone Weight](https://leetcode.com/problems/last-stone-weight/)
  */
 interface Solution {
     fun lastStoneWeight(stones: IntArray): Int
+}
+
+class SolutionHeap : Solution {
+    override fun lastStoneWeight(stones: IntArray): Int {
+        val pq = PriorityQueue<Int>(Collections.reverseOrder()).apply { stones.forEach { add(it) } }
+        while (pq.size > 1) {
+            val smash = pq.poll() - pq.poll()
+            if (smash != 0) pq.add(abs(smash))
+        }
+        return if (pq.isEmpty()) 0 else pq.poll()
+    }
 }
 
 class SolutionTreeMap : Solution {

@@ -5,7 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.EnumSource
 
 enum class Solutions(private val solution: Solution) : Solution {
-    TREEMAP(SolutionTreeMap()), SORT(SolutionSort());
+    TREEMAP(SolutionTreeMap()), SORT(SolutionSort()), HEAP(SolutionHeap());
 
     override fun lastStoneWeight(stones: IntArray): Int = solution.lastStoneWeight(stones)
 }
